@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Webseite</title>
+    <link rel="stylesheet" href="styles.css">
+   
+</head>
+
+<body>
+    <header>
+        <h1>Willkommen zu meiner Webseite</h1>
+    </header>
+     <main>
+        <h1>Über mich.</h1>
+        <h2>Hallo Ich bin Niklas</h2>
+        <p>
+            Aktuell studiere ich im 5. Semester Geoinformatik und Vermessung an der Hochschule Mainz.<br>
+            Ich interessiere mich sehr für Webentwicklung und Programmierung.<br>
+            In meiner Freizeit beschäftige ich mich gerne mit neuen Technologien und arbeite an eigenen Projekten.<br>
+            Mein Ziel ist es, innovative Lösungen für komplexe Probleme zu entwickeln und mein Wissen stetig zu erweitern.
+        </p>
+        <figure style="float:right; width:220px; margin-left:20px;">
+            <img src="assets/me.jpg" alt="Portrait von Niklas" style="width:200px; border-radius:8px;">
+            <figcaption>Das bin ich.</figcaption>
+        </figure>
+        <table>
+            <thead>
+                <tr>
+                    <th>Jahr</th>
+                    <th>Station</th>
+                    <th>Ort</th>
+                    <th>Stichwort</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2018</td>
+                    <td>Abitur</td>
+                    <td>Mainz</td>
+                    <td>Schulabschluss</td>
+                </tr>
+                <tr>
+                    <td>2019</td>
+                    <td>Praktikum</td>
+                    <td>Wiesbaden</td>
+                    <td>Vermessungsbüro</td>
+                </tr>
+                <tr>
+                    <td>2020</td>
+                    <td>Studienbeginn</td>
+                    <td>Mainz</td>
+                    <td>Geoinformatik</td>
+                </tr>
+                <tr>
+                    <td>2022</td>
+                    <td>Werkstudent</td>
+                    <td>Frankfurt</td>
+                    <td>GIS-Projekte</td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td>Auslandssemester</td>
+                    <td>Stockholm</td>
+                    <td>Erfahrung sammeln</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <section style="display: flex; gap: 24px; margin-top: 32px;">
+        <!-- Karte 1: Mainz -->
+        <div style="flex:1; border:1px solid #ccc; border-radius:8px; padding:12px; background:#fafafa;">
+            <h3>Mainz</h3>
+            <div id="map-mainz" style="height:180px; border-radius:6px; margin-bottom:8px;"></div>
+            <img src="assets/mainz.jpg" alt="Mainz am Rhein" style="width:100%; border-radius:6px; margin-bottom:8px;">
+            <p>Die Landeshauptstadt von Rheinland-Pfalz, bekannt für ihre Geschichte und den Rhein.</p>
+        </div>
+        <!-- Karte 2: Wiesbaden -->
+        <div style="flex:1; border:1px solid #ccc; border-radius:8px; padding:12px; background:#fafafa;">
+            <h3>Wiesbaden</h3>
+            <div id="map-wiesbaden" style="height:180px; border-radius:6px; margin-bottom:8px;"></div>
+            <img src="assets/wiesbaden.jpg" alt="Kurhaus Wiesbaden" style="width:100%; border-radius:6px; margin-bottom:8px;">
+            <p>Wiesbaden ist für seine Thermalquellen und das prachtvolle Kurhaus bekannt.</p>
+        </div>
+        <!-- Karte 3: Stockholm -->
+        <div style="flex:1; border:1px solid #ccc; border-radius:8px; padding:12px; background:#fafafa;">
+            <h3>Stockholm</h3>
+            <div id="map-stockholm" style="height:180px; border-radius:6px; margin-bottom:8px;"></div>
+            <img src="assets/stockholm.jpg" alt="Stockholm Altstadt" style="width:100%; border-radius:6px; margin-bottom:8px;">
+            <p>Die Hauptstadt Schwedens, berühmt für ihre Inseln und die historische Altstadt.</p>
+        </div>
+    </section>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Mainz
+        var mapMainz = L.map('map-mainz').setView([50.001, 8.271], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap'
+        }).addTo(mapMainz);
+        L.marker([50.001, 8.271]).addTo(mapMainz).bindPopup('Mainz');
+
+        // Wiesbaden
+        var mapWiesbaden = L.map('map-wiesbaden').setView([50.082, 8.241], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap'
+        }).addTo(mapWiesbaden);
+        L.marker([50.082, 8.241]).addTo(mapWiesbaden).bindPopup('Wiesbaden');
+
+        // Stockholm
+        var mapStockholm = L.map('map-stockholm').setView([59.329, 18.068], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap'
+        }).addTo(mapStockholm);
+        L.marker([59.329, 18.068]).addTo(mapStockholm).bindPopup('Stockholm');
+    </script>
+
+    <footer>
+        <p>&copy; 2024 My Web Page</p>
+    </footer>
+</body>
+
+</html>
