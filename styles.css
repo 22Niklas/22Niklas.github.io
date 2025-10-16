@@ -118,7 +118,3 @@ a:focus, a:hover {
     outline: none;
 }
 
-/* Für bessere Zugänglichkeit: Fokus-Stil für interaktive Elemente */
-button, [role="button"], input, select, textarea {
-    outline: 2px solid #005080;
-    outline-offset: 2px;
