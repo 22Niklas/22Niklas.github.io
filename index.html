@@ -100,7 +100,7 @@
         </section>
 
 
-        <section id="tab-projects" class="tab-content">
+        <section id="tab-projects" class="tab-content" style="display:none;">
             <h2>Meine Projekte</h2>
             <div style="display:flex; gap:16px; flex-wrap:wrap;">   
                 <!-- Karte 1: Mainz -->
@@ -125,8 +125,20 @@
 
 
     <script>
- 
-        //Erstellung der Karten mit Leaflet.js
+        // Tabs Umschalten
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
+                document.getElementById('tab-' + this.dataset.tab).style.display = 'block';
+                mapMainz.invalidateSize(true);
+                mapWiesbaden.invalidateSize(true); 
+                mapStockholm.invalidateSize(true);
+            });
+        });
+
+
         // Mainz
         var mapMainz = L.map('map-mainz').setView([50.001, 8.271], 13);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -149,21 +161,6 @@
         L.marker([59.329, 18.068]).addTo(mapStockholm).bindPopup('Stockholm');
 
 
-        // Tabs Umschalten
-        document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
-                document.getElementById('tab-' + this.dataset.tab).style.display = 'block';
-                
-                //Karten initialisieren
-                mapMainz.invalidateSize(true);
-                mapWiesbaden.invalidateSize(true);
-                mapStockholm.invalidateSize(true);
-                
-            });
-        });
 
         // Light/Night Mode Umschalten
         const modeToggle = document.getElementById('modeToggle');
@@ -183,7 +180,7 @@
                 const news = await res.json();
                 container.innerHTML = news.map(item => `
                     <article class="news-card" style="display:flex; gap:18px; align-items:flex-start; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.06); padding:16px;">
-                        <img src="${item.image}" alt="${item.title}" style="width:220px; height:180px; object-fit:cover; border-radius:6px; flex-shrink:0;">
+                        <img src="${item.image}" alt="${item.title}" style="width:220px; height:auto; object-fit:cover; border-radius:6px; flex-shrink:0;">
                         <div>
                             <h3 style="margin:0 0 6px 0; font-size:1.1em;">${item.title}</h3>
                             <div style="font-size:0.95em; color:#666; margin-bottom:4px;">${item.date}</div>
