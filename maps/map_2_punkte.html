@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_abb3697857c6e71ae6872e75e412ac7c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_abb3697857c6e71ae6872e75e412ac7c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_abb3697857c6e71ae6872e75e412ac7c = L.map(
+                "map_abb3697857c6e71ae6872e75e412ac7c",
+                {
+                    center: [49.0, 8.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_52ea0dcf8d0f32aa8760f77fdabe04bc = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_52ea0dcf8d0f32aa8760f77fdabe04bc.addTo(map_abb3697857c6e71ae6872e75e412ac7c);
+        
+    
+            var tile_layer_48b56c3c9b1827476b2457311fae1a34 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_48b56c3c9b1827476b2457311fae1a34.addTo(map_abb3697857c6e71ae6872e75e412ac7c);
+        
+    
+            var marker_53236f77d2011c89b8e26e352f0f5c99 = L.marker(
+                [48.8584, 2.2945],
+                {
+}
+            ).addTo(map_abb3697857c6e71ae6872e75e412ac7c);
+        
+    
+            var icon_184a69267b4b0656ced9c093405efbf3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8add0baeca1439bd248cacdf72c174be = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_76c6da4f0c1058ae9f0a078a27530afa = $(`<div id="html_76c6da4f0c1058ae9f0a078a27530afa" style="width: 100.0%; height: 100.0%;"><b>Eiffelturm</b><br>Paris, Frankreich</div>`)[0];
+                popup_8add0baeca1439bd248cacdf72c174be.setContent(html_76c6da4f0c1058ae9f0a078a27530afa);
+            
+        
+
+        marker_53236f77d2011c89b8e26e352f0f5c99.bindPopup(popup_8add0baeca1439bd248cacdf72c174be)
+        ;
+
+        
+    
+    
+                marker_53236f77d2011c89b8e26e352f0f5c99.setIcon(icon_184a69267b4b0656ced9c093405efbf3);
+            
+    
+            var marker_6ee0dabff31e47f934eebddbdbb068e2 = L.marker(
+                [41.8902, 12.4922],
+                {
+}
+            ).addTo(map_abb3697857c6e71ae6872e75e412ac7c);
+        
+    
+            var icon_f1e4f3ebeedb3a3286113c6586dc6aae = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8a017af35983de6fe5ca241db90260ba = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_465a1288bc8d62c660bea470c911d119 = $(`<div id="html_465a1288bc8d62c660bea470c911d119" style="width: 100.0%; height: 100.0%;"><b>Kolosseum</b><br>Rom, Italien</div>`)[0];
+                popup_8a017af35983de6fe5ca241db90260ba.setContent(html_465a1288bc8d62c660bea470c911d119);
+            
+        
+
+        marker_6ee0dabff31e47f934eebddbdbb068e2.bindPopup(popup_8a017af35983de6fe5ca241db90260ba)
+        ;
+
+        
+    
+    
+                marker_6ee0dabff31e47f934eebddbdbb068e2.setIcon(icon_f1e4f3ebeedb3a3286113c6586dc6aae);
+            
+    
+            var marker_d42fed8f88d737431444b3a6e1e0f6af = L.marker(
+                [52.5163, 13.3777],
+                {
+}
+            ).addTo(map_abb3697857c6e71ae6872e75e412ac7c);
+        
+    
+            var icon_45d8d47c8d4347123b65cebef836752b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8c48093d4d1b5acecb2958baef3f6960 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_8595ae19c5f41fa72a207f1f6476ab18 = $(`<div id="html_8595ae19c5f41fa72a207f1f6476ab18" style="width: 100.0%; height: 100.0%;"><b>Brandenburger Tor</b><br>Berlin, Deutschland</div>`)[0];
+                popup_8c48093d4d1b5acecb2958baef3f6960.setContent(html_8595ae19c5f41fa72a207f1f6476ab18);
+            
+        
+
+        marker_d42fed8f88d737431444b3a6e1e0f6af.bindPopup(popup_8c48093d4d1b5acecb2958baef3f6960)
+        ;
+
+        
+    
+    
+                marker_d42fed8f88d737431444b3a6e1e0f6af.setIcon(icon_45d8d47c8d4347123b65cebef836752b);
+            
+    
+            var marker_16439b22f6193304300f88954a2e5eb4 = L.marker(
+                [49.9882, 8.227],
+                {
+}
+            ).addTo(map_abb3697857c6e71ae6872e75e412ac7c);
+        
+    
+            var icon_12554c51fc22129a5929d94d098ac220 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "education",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_903f13c40c836fba8a4c49084109acd5 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_4fa82a4aa4fe820eac52d3ec13782624 = $(`<div id="html_4fa82a4aa4fe820eac52d3ec13782624" style="width: 100.0%; height: 100.0%;"><b>Hochschule Mainz</b><br>Mainz, Deutschland</div>`)[0];
+                popup_903f13c40c836fba8a4c49084109acd5.setContent(html_4fa82a4aa4fe820eac52d3ec13782624);
+            
+        
+
+        marker_16439b22f6193304300f88954a2e5eb4.bindPopup(popup_903f13c40c836fba8a4c49084109acd5)
+        ;
+
+        
+    
+    
+                marker_16439b22f6193304300f88954a2e5eb4.setIcon(icon_12554c51fc22129a5929d94d098ac220);
+            
+    
+            var layer_control_877d094851e2714cf00cd32dbfc4b1c9_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_52ea0dcf8d0f32aa8760f77fdabe04bc,
+                    "Carto Light" : tile_layer_48b56c3c9b1827476b2457311fae1a34,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_877d094851e2714cf00cd32dbfc4b1c9 = L.control.layers(
+                layer_control_877d094851e2714cf00cd32dbfc4b1c9_layers.base_layers,
+                layer_control_877d094851e2714cf00cd32dbfc4b1c9_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_abb3697857c6e71ae6872e75e412ac7c);
+
+        
+    
+            tile_layer_52ea0dcf8d0f32aa8760f77fdabe04bc.addTo(map_abb3697857c6e71ae6872e75e412ac7c);
+        
+    
+            tile_layer_48b56c3c9b1827476b2457311fae1a34.addTo(map_abb3697857c6e71ae6872e75e412ac7c);
+        
+    
+                marker_53236f77d2011c89b8e26e352f0f5c99.setIcon(icon_184a69267b4b0656ced9c093405efbf3);
+            
+    
+                marker_6ee0dabff31e47f934eebddbdbb068e2.setIcon(icon_f1e4f3ebeedb3a3286113c6586dc6aae);
+            
+    
+                marker_d42fed8f88d737431444b3a6e1e0f6af.setIcon(icon_45d8d47c8d4347123b65cebef836752b);
+            
+    
+                marker_16439b22f6193304300f88954a2e5eb4.setIcon(icon_12554c51fc22129a5929d94d098ac220);
+            
+</script>
+</html>

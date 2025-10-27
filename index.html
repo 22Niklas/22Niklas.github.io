@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meine Webseite</title>
     <link rel="stylesheet" href="styles.css">
+
     
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 
 <body>
@@ -103,20 +102,43 @@
         <section id="tab-projects" class="tab-content" style="display:none;">
             <h2>Meine Projekte</h2>
             <div style="display:flex; gap:16px; flex-wrap:wrap;">   
-                <!-- Karte 1: Mainz -->
-                <div style="flex:1; border:1px solid #ccc; border-radius:8px; padding:12px;">
-                    <h3>Mainz</h3>
-                    <div id="map-mainz" style="border-radius:6px; margin-bottom:8px;"></div>
+                <!-- Karte 1: Basiskarte -->
+                <div style="flex:0 0 calc(48% - 10px); border:1px solid #ccc; border-radius:8px; padding:12px;">
+                    <h3>Karte 1 - Basiskarte</h3>
+
+                    <iframe src="maps/map_1_basiskarte.html"></iframe>
+               
                 </div>
-                <!-- Karte 2: Wiesbaden -->
-                <div style="flex:1; border:1px solid #ccc; border-radius:8px; padding:12px;">
-                    <h3>Wiesbaden</h3>
-                    <div id="map-wiesbaden" style="border-radius:6px; margin-bottom:8px;"></div>
+                <!-- Karte 2: persönliche Orte -->
+                <div style="flex:0 0 calc(48% - 10px); border:1px solid #ccc; border-radius:8px; padding:12px;">
+                    <h3>Karte 2 - Persönliche Orte</h3>
+
+                    <iframe src="maps/map_2_punkte.html"></iframe>
+                    
                 </div>
-                <!-- Karte 3: Stockholm -->
-                <div style="flex:1; border:1px solid #ccc; border-radius:8px; padding:12px;">
-                    <h3>Stockholm</h3>
-                    <div id="map-stockholm" style="border-radius:6px; margin-bottom:8px;"></div>
+                <!-- Karte 3: Reiseroute -->
+                <div style="flex:0 0 calc(48% - 10px); border:1px solid #ccc; border-radius:8px; padding:12px;">
+                    <h3>Karte 3 - Reiseroute</h3>
+            
+                    <iframe src="maps/map_3_reiseroute.html"></iframe>
+                </div>
+                <!-- Karte 4: Flächen besuchter Länder -->
+                <div style="flex:0 0 calc(48% - 10px); border:1px solid #ccc; border-radius:8px; padding:12px;">
+                    <h3>Karte 4 - Flächen besuchter Länder</h3>
+
+                    <iframe src="maps/map_4_flaechen_online.html"></iframe>
+                </div>
+                <!-- Karte 5: 3D-Ansicht -->
+                <div style="flex:0 0 calc(48% - 10px); border:1px solid #ccc; border-radius:8px; padding:12px;">
+                    <h3>Karte 5 - 3D-Ansicht</h3>
+                    
+                    <iframe src="maps/map_5_3D_Ansicht.html"></iframe>
+                </div>
+                <!-- Karte 6: Web-Karte von Kepler -->
+                <div style="flex:0 0 calc(48% - 10px); border:1px solid #ccc; border-radius:8px; padding:12px;">
+                    <h3>Karte 6 - "2017 Unemployment Rates for U.S. Counties" von Kepler.gl</h3>
+                    
+                    <iframe src="maps/kepler_map.html"></iframe>
                 </div>
             </div>
         </section>
@@ -132,35 +154,9 @@
                 this.classList.add('active');
                 document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
                 document.getElementById('tab-' + this.dataset.tab).style.display = 'block';
-                mapMainz.invalidateSize(true);
-                mapWiesbaden.invalidateSize(true); 
-                mapStockholm.invalidateSize(true);
+    
             });
         });
-
-
-        // Mainz
-        var mapMainz = L.map('map-mainz').setView([50.001, 8.271], 13);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap'
-        }).addTo(mapMainz);
-        L.marker([50.001, 8.271]).addTo(mapMainz).bindPopup('Mainz');
-
-        // Wiesbaden
-        var mapWiesbaden = L.map('map-wiesbaden').setView([50.082, 8.241], 13);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap'
-        }).addTo(mapWiesbaden);
-        L.marker([50.082, 8.241]).addTo(mapWiesbaden).bindPopup('Wiesbaden');
-
-        // Stockholm
-        var mapStockholm = L.map('map-stockholm').setView([59.329, 18.068], 13);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap'
-        }).addTo(mapStockholm);
-        L.marker([59.329, 18.068]).addTo(mapStockholm).bindPopup('Stockholm');
-
-
 
         // Light/Night Mode Umschalten
         const modeToggle = document.getElementById('modeToggle');
@@ -199,6 +195,8 @@
                 if (this.dataset.tab === 'news') loadNews();
             });
         });
+
+
     </script>
    
 
